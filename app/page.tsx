@@ -147,14 +147,14 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-700 to-black-900 flex flex-col items-center justify-center text-white">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl md:text-6xl font-bold text-center mb-8 etx">
+        <h1 className="text-4xl md:text-6xl font-bold text-center mb-8">
           Pokedex
         </h1>
         <div className="flex justify-center mb-4">
           <input
             type="text"
             className="mx-auto text-center bg-gray-800 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="Search for a Pokémon"
+            placeholder="Search Pokémon..."
           />
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8">
