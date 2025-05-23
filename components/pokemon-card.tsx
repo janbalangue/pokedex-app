@@ -19,13 +19,13 @@ const typeColors: { [key: string]: string } = {
   dark: 'bg-gray-800',
   fairy: 'bg-pink-300',
   normal: 'bg-gray-600',
-  steel: 'bg-gray-400'
-}
+  steel: 'bg-gray-400',
+}            
 
 export default function PokemonCard({ name, imageUrl, id, types }: Pokemon) {
   return (
     <div className="bg-gray-800 rounded-lg shadow-lg text-center transform transition-transform duration-200 hover:scale-105 ring-2 ring-gray-700 p-4">
-      <div className="relative aspect-square mb-4">
+      <div className="flex justify-center items-center relative aspect-square mb-4">
         <Image
           className="rounded-full"
           src={imageUrl}
@@ -34,8 +34,8 @@ export default function PokemonCard({ name, imageUrl, id, types }: Pokemon) {
           height={250}
         />
       </div>
-      <h2 className="text-xl font-bold capitalize">{name}</h2>
-      <p className="text-gray-500 text-sm mb-1">#{String(id).padStart(3, '0')}</p>
+      <h2 className="text-xl font-bold capitalize mb-1">{name}</h2>
+      <p className="text-gray-500 text-sm mb-2">#{String(id).padStart(3, '0')}</p>
       {types.map((type, idx) => (<span
         key={`${idx}-${type}`}
         className={`text-white mx-1 px-2 py-1 rounded-full text-sm font-semibold ${typeColors[type]}`}

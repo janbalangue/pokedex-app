@@ -1,4 +1,4 @@
-import PokemonList from '@/components/pokemon-list';
+import PokemonWrapper from '@/components/pokemon-wrapper';
 import React from 'react';
 
 async function getData() {
@@ -44,21 +44,12 @@ export default async function Home() {
   const pokemons = await getData();
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-700 to-black-900 flex flex-col items-center justify-center text-white">
-      <div className="container mx-auto px-4">
-        <h1 className="text-4xl md:text-6xl font-bold text-center my-8">
+    <div className="min-h-screen bg-gradient-to-b from-gray-700 to-black-900 text-white">
+      <div className="container mx-auto">
+        <h1 className="pt-8 text-4xl md:text-6xl font-bold text-center">
           Pokedex
         </h1>
-        <div className="flex justify-center mb-8">
-          <input
-            type="text"
-            className="mx-auto text-center bg-gray-800 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="Search Pokémon..."
-          />
-        </div>
-        <div className="flex flex-col items-center justify-center">
-          <PokemonList pokemons={pokemons} />
-        </div>
+        <PokemonWrapper pokemons={pokemons} />
       </div>
     </div>
   );
