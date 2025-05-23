@@ -1,4 +1,4 @@
-#pokedex-app
+# pokedex-app
 
 Vercel link: https://pokedex-5rhpnhel3-jan-balangues-projects.vercel.app/
 
