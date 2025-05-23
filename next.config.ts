@@ -4,15 +4,7 @@ const repo = "pokedex-app"; // Only the repo name
 
 const nextConfig: NextConfig = {
   output: "export",
-  images: {
-    unoptimized: true,
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "raw.githubusercontent.com",
-      },
-    ],
-  },
+  images: { unoptimized: true },
   basePath: `/${repo}`,
   assetPrefix: `/${repo}/`,
 };
