@@ -1,5 +1,4 @@
-import { Pokemon } from '@/utils/types';
-import Image from 'next/image';
+import PokemonList from '@/components/pokemon-list';
 import React from 'react';
 
 async function getData() {
@@ -42,7 +41,7 @@ async function getData() {
 }
 
 export default async function Home() {
-  const pokedata = await getData();
+  const pokemons = await getData();
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-700 to-black-900 flex flex-col items-center justify-center text-white">
@@ -58,30 +57,7 @@ export default async function Home() {
           />
         </div>
         <div className="flex flex-col items-center justify-center">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {pokedata.map((pokemon: Pokemon, idx: number) => {
-              return (
-                <div
-                  key={`${idx}-${pokemon.name}`}
-                  className="flex flex-col items-center bg-gray-800 rounded-lg transition-transform duration-200 hover:scale-105 shadow-xl px-4 py-2"
-                >
-                  <Image
-                    className="rounded-full"
-                    src={pokemon.imageUrl}
-                    alt={
-                      typeof pokemon.name === 'string'
-                        ? pokemon.name
-                        : String(pokemon.name ?? 'Unknown')
-                    }
-                    width={150}
-                    height={150}
-                  />
-                  <h2 className="mt-2 font-semibold">{pokemon.name}</h2>
-                  <div className="text-sm text-gray-400">{pokemon.types.join(', ')}</div>
-                </div>
-              );
-            })}
-          </div>
+          <PokemonList pokemons={pokemons} />
         </div>
       </div>
     </div>
