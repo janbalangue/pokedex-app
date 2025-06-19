@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-const repo = "pokedex-app"; // Only the repo name
+const repo = "janbalangue/pokedex-app"; // <-- Replace with your GitHub repo name
 
 const nextConfig: NextConfig = {
   output: "export",
