@@ -13,7 +13,7 @@ async function getData() {
 
     const pokemonDetails = await Promise.all(
       data.results.map(async (pokemon: { url: string }) => {
-        const res = await fetch(pokemon.url);
+        const res = await fetch(pokemon.url, { next: { revalidate: 3600 } });
         if (!res.ok) {
           throw new Error(`Response status: ${res.status}`);
         }
